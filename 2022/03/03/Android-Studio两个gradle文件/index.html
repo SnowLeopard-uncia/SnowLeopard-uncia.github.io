@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Snow Leopard">
+    
+    <title>
+        
+            Android Studio两个gradle文件 |
+        
+        Snow Leopard&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#6699CC","avatar":"/images/logo_img.jpg","favicon":"/images/favicon.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Hello World"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":"true# Preload the search data when the page loads"},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":true},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Snow Leopard&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Android Studio两个gradle文件</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo_img.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Snow Leopard</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-03-03 17:57:24</span>
+        <span class="mobile">2022-03-03 17:57</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Android/">Android</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>Android Studio 是用gradle来构建项目的。创建项目时会有两个build.gradle文件，一个在最外层，一个在app目录下。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220126183705138.png"
+                      alt="image-20220126183705138"
+                ></p>
+<h2 id="最外层目录的build-gradle："><a href="#最外层目录的build-gradle：" class="headerlink" title="最外层目录的build.gradle："></a>最外层目录的build.gradle：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span><br><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath &quot;com.android.tools.build:gradle:7.0.4&quot;</span><br><span class="line">        classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10&quot;</span><br><span class="line"></span><br><span class="line">        // NOTE: Do not place your application dependencies here; they belong</span><br><span class="line">        // in the individual module build.gradle files</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task clean(type: Delete) &#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="repositories"><a href="#repositories" class="headerlink" title="repositories"></a>repositories</h3><p>repositories的闭包中声明了   google() mavenCentral()，两者分别对应了一个代码仓库，google仓库中包含的主要是Google的扩展依赖库，mavenCentral仓库中是一些第三方开源库，声明两行配置后项目可以引用Google和mavenCentral仓库中的依赖库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    google()</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>maven仓库有两种，mavenCenter()和jCenter():</p>
+<ul>
+<li>Maven Central 则是由sonatype.org维护的Maven仓库。</li>
+</ul>
+<p><a class="link"   target="_blank" rel="noopener" href="http://jcenter.bintray.com/" >http://jcenter.bintray.com/<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>jcenter是一个由 bintray.com维护的Maven仓库。<br>可以在这里看到整个仓库的内容。</li>
+</ul>
+<p> <a class="link"   target="_blank" rel="noopener" href="https://oss.sonatype.org/content/repositories/releases/" >https://oss.sonatype.org/content/repositories/releases/<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>maven中央仓库已经将内容浏览功能禁掉了，可在这个网站查询。</li>
+</ul>
+<p> <a class="link"   target="_blank" rel="noopener" href="http://search.maven.org/" >http://search.maven.org/<i class="fas fa-external-link-alt"></i></a></p>
+<p>JCenter() 与 mavenCenter()在完全不同的服务器上维护，由不同的人提供内容，两者之间毫无关系。在jcenter上有的可能 Maven Central 上没有，反之亦然。</p>
+</blockquote>
+<h3 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h3><p>dependencies闭包中使用classpath声明了两个插件：一个Gradle插件和一个Kotlin插件。如果想要Gradle来构建Android项目，要声明这个插件。用Kotlin插件表示目前项目是用Kotlin开发，如果是Java版的Android项目就不需要声明这个Kotlin插件。</p>
+<pre><code>dependencies &#123;
+    classpath &quot;com.android.tools.build:gradle:7.0.4&quot;
+    classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10&quot;
+&#125;
+</code></pre>
+<h2 id="app目录下的build-gradle文件："><a href="#app目录下的build-gradle文件：" class="headerlink" title="app目录下的build.gradle文件："></a>app目录下的build.gradle文件：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id &#x27;com.android.application&#x27;</span><br><span class="line">    id &#x27;kotlin-android&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdk 31</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;com.example.kotlinpractice&quot;</span><br><span class="line">        minSdk 21</span><br><span class="line">        targetSdk 32</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled false</span><br><span class="line">            proguardFiles getDefaultProguardFile(&#x27;proguard-android-optimize.txt&#x27;), &#x27;proguard-rules.pro&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br><span class="line">    kotlinOptions &#123;</span><br><span class="line">        jvmTarget = &#x27;1.8&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line"></span><br><span class="line">    implementation &#x27;androidx.core:core-ktx:1.3.2&#x27;</span><br><span class="line">    implementation &#x27;androidx.appcompat:appcompat:1.2.0&#x27;</span><br><span class="line">    implementation &#x27;com.google.android.material:material:1.3.0&#x27;</span><br><span class="line">    implementation &#x27;androidx.constraintlayout:constraintlayout:2.0.4&#x27;</span><br><span class="line">    testImplementation &#x27;junit:junit:4.+&#x27;</span><br><span class="line">    androidTestImplementation &#x27;androidx.test.ext:junit:1.1.2&#x27;</span><br><span class="line">    androidTestImplementation &#x27;androidx.test.espresso:espresso-core:3.3.0&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id &#x27;com.android.application&#x27;</span><br><span class="line">    id &#x27;kotlin-android&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此处用了两个插件，<code>com.android.application</code>表示这是一个应用程序模块，这里还可以选一个值：<code>com.android.library</code>，表示这是一个库模块。二者最大区别是应用程序模块是可以直接运行的，库模块只能作为代码库依附于别的应用程序模块来运行。</p>
+<p>第二个插件<code>kotlin-android</code>，如果用kotlin开发Android项目，这个插件是必须的。</p>
+<h3 id="android"><a href="#android" class="headerlink" title="android"></a>android</h3><p><code> compileSdk 31</code>用于指定项目编译版本，这里31表示用Android 12.0系统的SDK编译。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220126192003779.png"
+                      alt="image-20220126192003779"
+                ></p>
+<h4 id="defaultConfig闭包"><a href="#defaultConfig闭包" class="headerlink" title="defaultConfig闭包"></a>defaultConfig闭包</h4><ul>
+<li><code>applicationId</code>每一个应用的唯一标识符，绝对不能重复，默认使用创建项目时候的包名，后面想改可以在这里改。</li>
+<li><code>minSdk</code>用于指定项目最低兼容的Android版本，指定为21说明最低兼容到Android 5.0</li>
+<li><code>targetSdk</code></li>
+<li><code>versionCode</code>项目版本号</li>
+<li><code>versionName</code>项目版本名</li>
+<li><code>testInstrumentationRunner</code>在当前项目中启用JUnit测试。可以为当前项目编写测试用例。</li>
+</ul>
+<h4 id="buildTypes闭包"><a href="#buildTypes闭包" class="headerlink" title="buildTypes闭包"></a>buildTypes闭包</h4><p>用于指定生成安装文件的相关配置，通常有两个子闭包：<code>debug</code> 、<code>release</code></p>
+<ul>
+<li><p><code>debug</code> 用于指定生成测试版安装文件的配置，可以忽略不写</p>
+</li>
+<li><p><code>release</code>用于指定生成正式版安装文件的配置。</p>
+<p><code>release</code>闭包中的具体内容</p>
+<ul>
+<li><p><code>minifyEnabled</code> 用于指定是否对项目代码进行混淆，true：混淆   false：不混淆</p>
+</li>
+<li><p><code>proguardFiles</code>用于指定混淆时使用的规则文件，这里指定两个文件</p>
+<ul>
+<li><code>proguard-android-optimize.txt</code>在<Android SDK>&#x2F;tools&#x2F;proguard目录下的里面是所有项目通用混淆规则</li>
+<li><code>proguard-rules.pro</code>在当前项目下，可以编写当前项目特有的混淆规则</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220127111528751.png"
+                      alt="image-20220127111528751"
+                ></p>
+</li>
+</ul>
+<p>通过Android Studio直接运行项目生成的都是测试版安装文件</p>
+</li>
+</ul>
+<h3 id="dependencies闭包"><a href="#dependencies闭包" class="headerlink" title="dependencies闭包"></a>dependencies闭包</h3><p>指定当前项目所有依赖关系</p>
+<p>一般Android Studio有三种依赖方式：本地依赖、远程依赖、库依赖</p>
+<ul>
+<li>本地依赖：对本地jar包或目录添加依赖关系</li>
+<li>库依赖：对项目中的库模块添加依赖</li>
+<li>远程依赖：可以对jcenter仓库上的开源项目添加依赖关系</li>
+</ul>
+<p>参考：《第一行代码》、<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/u013806583/article/details/85041052" >JCenter() 与 mavenCenter() 的区别_小二的茶馆-CSDN博客_jcenter<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Android/">#Android</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/03/03/Java%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Java的安装和环境配置</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/02/26/%E5%8D%8E%E5%8D%97%E6%A4%8D%E7%89%A9%E5%9B%AD%E8%A7%82%E9%B8%9F%E8%AE%B0%E5%BD%95/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">华南植物园观鸟记录</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Snow Leopard</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%96%E5%B1%82%E7%9B%AE%E5%BD%95%E7%9A%84build-gradle%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">最外层目录的build.gradle：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#repositories"><span class="nav-number">1.1.</span> <span class="nav-text">repositories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dependencies"><span class="nav-number">1.2.</span> <span class="nav-text">dependencies</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84build-gradle%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">app目录下的build.gradle文件：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-number">2.1.</span> <span class="nav-text">plugins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android"><span class="nav-number">2.2.</span> <span class="nav-text">android</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#defaultConfig%E9%97%AD%E5%8C%85"><span class="nav-number">2.2.1.</span> <span class="nav-text">defaultConfig闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#buildTypes%E9%97%AD%E5%8C%85"><span class="nav-number">2.2.2.</span> <span class="nav-text">buildTypes闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dependencies%E9%97%AD%E5%8C%85"><span class="nav-number">2.3.</span> <span class="nav-text">dependencies闭包</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
