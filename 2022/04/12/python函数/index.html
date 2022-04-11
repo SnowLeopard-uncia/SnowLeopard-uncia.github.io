@@ -9,7 +9,7 @@
     
     <title>
         
-            Android Studio 修改包名 |
+            python函数 |
         
         Snow Leopard&#39;s Blog
     </title>
@@ -161,7 +161,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Android Studio 修改包名</span>
+            <span class="title-hover-animation">python函数</span>
         </div>
 
         
@@ -180,8 +180,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-04-01 15:03:37</span>
-        <span class="mobile">2022-04-01 15:03</span>
+        <span class="pc">2022-04-12 00:58:36</span>
+        <span class="mobile">2022-04-12 00:58</span>
     </span>
     
     
@@ -190,7 +190,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Android-Studio/">Android Studio</a>&nbsp;
+                        <a href="/tags/python/">python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -200,12 +200,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>342 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>413 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -221,70 +221,44 @@
         
 
         <div class="article-content markdown-body">
-            <p>找到清单文件</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303183230121.png"
-                      alt="image-20220303183230121"
-                ></p>
-<p>找到package</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303183235616.png"
-                      alt="image-20220303183235616"
-                ></p>
-<p>选中中间那个example，右键，Refactor，Rename，或者直接<code>shift+F6</code></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303183328656.png"
-                      alt="image-20220303183328656"
-                ></p>
-<p>点击rename package</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303183507967.png"
-                      alt="image-20220303183507967"
-                ></p>
-<p>出现这个界面，就可以重命名包名了</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303184104351.png"
-                      alt="image-20220303184104351"
-                ></p>
-<p>改完发现并没有那么简单，例如R文件的引用出问题了，还是com.example.XX</p>
-<p>修改app里面的build.gradle的applicationId</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303201802780.png"
-                      alt="image-20220303201802780"
-                ></p>
-<p>改完这个之后那个import R Class就变成修改后的包名了</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303202007646.png"
-                      alt="image-20220303202007646"
-                ></p>
-<p>AndroidManifest.xml 清单文件中注册的所有 Activity , Service 等组件 , 其 android:name 属性 , 都使用该组件的完整的包名类名，避免使用缺省包名的形式</p>
-<p>像这样</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="D:\HexoBlog\image\image-20220303202142496.png"
-                      alt="image-20220303202142496"
-                ></p>
-<p>包名修改后 , 对应生成的资源类 R , 编译配置类 BuildConfig 的包名也发生了相应的改变 ;</p>
-<p>对于源码中修改的 R 较多时 , 选中源码目录 src , 使用 “ Ctrl + Shift + R “ 快捷键 , 也可以右键点击 src 目录 , 选择 “ Replace in Path… “ 选项 ,</p>
-<p>修改 R 资源引用 : 在 “ Replace in Path “ 对话框中 ,</p>
-<p>搜索 “import kim.hsl.package_change.R;”<br>替换为 “import kim.hsl.package_change2.R;”</p>
-<p>直接点击下方的 “ Replace All “ 按钮 , 替换工程中所有的导入选项即可 ;</p>
-<p>参考：<a class="link"   target="_blank" rel="noopener" href="https://hanshuliang.blog.csdn.net/article/details/114634091" >【Android 应用开发】Android 工程修改包名流程 ( 修改 applicationId | 修改 package | 修改 R 资源引用 | 修改 BuildConfig 引用 )_让 学习 成为一种 习惯 ( 韩曙亮 の 技术博客 )-CSDN博客_android 修改包名<i class="fas fa-external-link-alt"></i></a></p>
+            <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def 函数名 ( 参数1, 参数2, … ):</span><br><span class="line">	函数的语句代码</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名 ( 参数1, 参数2, … )</span><br></pre></td></tr></table></figure>
+
+<p>遇到return语句时，程序退出该函数， 并返回到函数被调用的地方。return语句 返回的值作为表达式的结果传递给调用程序。可以返回一个值，也可以返回多个值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以return多个值</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="keyword">return</span> x,x+y,y</span><br><span class="line"></span><br><span class="line">s1,s2,s3=add(<span class="number">10</span>,<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(s1,s2,s3)</span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">10</span>,<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10 110 100</span><br><span class="line">(10, 20, 10)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 求和1+2+......+n</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sumUp</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        <span class="built_in">sum</span>=<span class="built_in">sum</span>+n</span><br><span class="line">        n=n-<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;input n：&quot;</span>))</span><br><span class="line">    <span class="built_in">print</span>(sumUp(n))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>递归是指在函数中调用函数自身的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fact</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n*fact(n-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fact(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="lambda-函数"><a href="#lambda-函数" class="headerlink" title="lambda 函数"></a>lambda 函数</h3><p>lamda函数的格式： lamda 参数1,参数2,…,参数n : 返回n个参数的表达式结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#lambda</span></span><br><span class="line">y = <span class="keyword">lambda</span> x: (x+<span class="number">1</span>)*(x+<span class="number">1</span>) <span class="keyword">if</span> x&gt;=<span class="number">10</span> <span class="keyword">else</span> math.sqrt(x-<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(y(<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(y(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">121</span><br><span class="line">1.4142135623730951</span><br></pre></td></tr></table></figure>
+
+<p>上面lambda<code>lambda x: (x+1)*(x+1) if x&gt;=10 else math.sqrt(x-1)</code>等效于</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fun</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">if</span> x &gt;= <span class="number">10</span>:</span><br><span class="line">        y = (x + <span class="number">1</span>) * (x + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y = math.sqrt(x - <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure>
+
+<p>例子：用了x的第0个作为关键字排序 reverse&#x3D;False为正序，True为倒序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用了x的第0个作为关键字排序 reverse=False为正序，True为倒序</span></span><br><span class="line"><span class="built_in">sorted</span>(mydict.iteritems(), key=<span class="keyword">lambda</span> x:x[<span class="number">0</span>], reverse=<span class="literal">False</span>)</span><br><span class="line">[(<span class="string">&#x27;001&#x27;</span>, <span class="string">&#x27;zhangshan&#x27;</span>), (<span class="string">&#x27;002&#x27;</span>, <span class="string">&#x27;LiSi&#x27;</span>), (<span class="string">&#x27;003&#x27;</span>, <span class="string">&#x27;wangbing&#x27;</span>), (<span class="string">&#x27;004&#x27;</span>, <span class="string">&#x27;liutao&#x27;</span>), (<span class="string">&#x27;005&#x27;</span>, <span class="string">&#x27;Zhaobing&#x27;</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>=(<span class="keyword">lambda</span> x,y : x <span class="keyword">if</span> x&gt;=y <span class="keyword">else</span> y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(<span class="number">100</span>,<span class="number">20</span>)</span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -294,7 +268,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/Android-Studio/">#Android Studio</a>&nbsp;
+                        <a href="/tags/python/">#python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -306,13 +280,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/04/01/%E6%9F%A5%E6%89%BE/"
+                           href="/2022/04/12/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">查找——线性表查找</span>
+                                <span class="post-nav-title-item">python文件操作</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -322,10 +296,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/03/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E4%B8%80%EF%BC%89/"
+                           href="/2022/04/01/%E6%9F%A5%E6%89%BE/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">线性表</span>
+                                <span class="post-nav-title-item">查找——线性表查找</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -451,7 +425,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lambda-%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">lambda 函数</span></a></li></ol>
     </div>
 </div>
         </aside>
